@@ -5,16 +5,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Code Share</title>
-    <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
-      $(function () {
-        var socket = io(config.get('port'));
-        $('textarea').keypress(function(){
-          socket.emit('message', $('#editor').val());
-          return false;
+      $(document).ready(function(){
+        var ws = new WebSocket("ws://localhost:3001");
+        var code = "";
+        
+        $('textarea').change(function(){
+          code=$('#editor').val();
+          ws.send(code);
         });
-      });
+        ws.onmessage = function(evt){
+          alert(evt.data);
+        };
+    });
     </script>
   </head>
 
