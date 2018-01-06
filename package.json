@@ -1,0 +1,30 @@
+{
+  "name": "code-share",
+  "version": "1.0.0",
+  "description": "A simple webapp to share code between programmers across the globe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ciphereck/CodeShare-Vs1.git"
+  },
+  "keywords": [
+    "code",
+    "share",
+    "ciphereck",
+    "nodejs",
+    "socket"
+  ],
+  "author": "Mudit Jain (ciphereck)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ciphereck/CodeShare-Vs1/issues"
+  },
+  "homepage": "https://github.com/ciphereck/CodeShare-Vs1#readme",
+  "dependencies": {
+    "config": "^1.29.0",
+    "express": "^4.16.2"
+  }
+}
