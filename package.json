@@ -26,6 +26,9 @@
   "dependencies": {
     "config": "^1.29.0",
     "ejs": "^2.5.7",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "socket.io": "^2.0.4",
+    "websocket": "^1.0.25",
+    "ws": "^4.0.0"
   }
 }

@@ -3,16 +3,26 @@
 
   <head>
     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width">
     <title>Code Share</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      $(function () {
+        var socket = io(config.get('port'));
+        $('textarea').keypress(function(){
+          socket.emit('message', $('#editor').val());
+          return false;
+        });
+      });
+    </script>
   </head>
-
 
   <body style="background-color: rgb(35, 113, 139)">
     <h1 align = "center" style="color:rgb(155, 0, 0); margin:2vh;">Code Share</h1>
     <strong><h3 align = "center" style="color:rgb(46, 8, 122); margin:0vh;" >By Mudit Jain</h4></strong>
     <br>  
-    <textarea style="height:76vh; width:86vw; margin-top:0vh; margin-left:7vw; background-color: black;color:#fff;"></textarea>
+    <textarea id="editor" style="height:76vh; width:86vw; margin-top:0vh; margin-left:7vw; background-color: black;color:#fff;"></textarea>
   </body>
 
 
